@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#f0edec"/>
+  <defs>
+    <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="2" fill="#705d00" opacity=".18"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="720" fill="url(#dots)"/>
+  <rect x="96" y="110" width="8" height="430" fill="#ffd700"/>
+  <rect x="150" y="130" width="680" height="24" fill="#705d00" opacity=".65"/>
+  <rect x="150" y="190" width="420" height="24" fill="#705d00" opacity=".35"/>
+  <text x="150" y="570" fill="#705d00" font-family="Arial, sans-serif" font-size="68" font-weight="900" letter-spacing="-3">DESIGN STUDY 09</text>
+</svg>
