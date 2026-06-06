@@ -24,31 +24,25 @@
 </header>
 <main>
   <section class="contact-page section">
-    <div class="contact-hero">
+    <div class="contact-hero reveal-card">
       <span class="eyebrow">contact.us</span>
       <h1>Let’s<br>Talk<span class="dot">.</span></h1>
       <p>For motion graphics, video editing, and visual design inquiries.</p>
     </div>
-
-    <div class="contact-info">
-      <a class="contact-link" href="mailto:khemmawat2539@hotmail.com">
-        <span>Email</span>
-        <strong>khemmawat2539@hotmail.com</strong>
-      </a>
-      <a class="contact-link" href="https://youtube.com/@taeoodmotion3968?si=3hNbAN0YJ-oHGJOD" target="_blank" rel="noopener">
-        <span>YouTube</span>
-        <strong>youtube.com/@taeoodmotion3968</strong>
-      </a>
+    <div>
+      <div class="contact-info reveal-card">
+        <a class="contact-link" href="mailto:khemmawat2539@hotmail.com"><span>Email</span><strong>khemmawat2539@hotmail.com</strong></a>
+        <a class="contact-link" href="https://youtube.com/@taeoodmotion3968?si=3hNbAN0YJ-oHGJOD" target="_blank" rel="noopener"><span>YouTube</span><strong>youtube.com/@taeoodmotion3968</strong></a>
+      </div>
+      <form class="contact-draft reveal-card" id="contactForm">
+        <span class="eyebrow">create_email_draft</span>
+        <label>Full name <input id="contactName" name="name" placeholder="ENTER YOUR NAME" required></label>
+        <label>Email address <input id="contactEmail" name="email" type="email" placeholder="EMAIL@DOMAIN.COM" required></label>
+        <label>Message <textarea id="contactMessage" name="message" placeholder="DESCRIBE YOUR PROJECT" required></textarea></label>
+        <button class="button primary" type="submit">Contact Me</button>
+        <p class="form-note">This opens your email app with a prepared draft. You still need to press send.</p>
+      </form>
     </div>
-
-    <form class="contact-draft" id="contactForm">
-      <span class="eyebrow">create_email_draft</span>
-      <label>Full name <input id="contactName" name="name" placeholder="ENTER YOUR NAME" required></label>
-      <label>Email address <input id="contactEmail" name="email" type="email" placeholder="EMAIL@DOMAIN.COM" required></label>
-      <label>Message <textarea id="contactMessage" name="message" placeholder="DESCRIBE YOUR PROJECT" required></textarea></label>
-      <button class="button primary" type="submit">Contact Me</button>
-      <p class="form-note">This opens your email app with a prepared draft. You still need to press send.</p>
-    </form>
   </section>
 </main>
 <footer class="site-footer">
@@ -67,8 +61,11 @@
     <div class="video-frame">
       <iframe id="modalVideo" title="YouTube video player" src="" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
     </div>
+    <a class="watch-youtube" id="watchYouTube" href="#" target="_blank" rel="noopener">Watch on YouTube →</a>
   </div>
 </div>
+<button class="to-top" id="toTop" type="button" aria-label="Scroll to top">↑</button>
+<div class="mouse-dot" id="mouseDot" aria-hidden="true"></div>
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,143 +1,70 @@
-# Khemmawat Tantragool Portfolio Website — V2
+# Khemmawat Tantragool Portfolio Website — V3
 
 Static responsive portfolio website for GitHub Pages.
 
-## Main changes in V2
+## V3 changes
 
-- Added `contact.html`
-- `Get In Touch` now goes to the Contact page
-- Added video modal popup: click a thumbnail to play YouTube video inside the website
-- Work thumbnails are black and white by default, then become full color on hover
-- Added contact draft form using `mailto:`
-- Added 9-slot grids for Motion, Video, and Graphic
-- Footer keeps: `© 2026 KHEMMAWAT TANTRAGOOL`
-
-## Important playlist note
-
-The website is static. It does not automatically pull YouTube playlist data live.
-
-Motion playlist:
-`https://youtube.com/playlist?list=PL8qV_1kI5UhFjftLzKUUPj3KzzkrMNKdZ`
-
-Video playlist:
-`https://youtube.com/playlist?list=PL8qV_1kI5UhFSuwuMUmAXmFncJOCbRw4F`
-
-I prepared the portfolio grid using the video links and playlist-visible/search-visible items available during creation.  
-For Video Editing, only 3 exact video URLs were available in the provided conversation, so the remaining slots reuse those IDs as editable placeholders.
+- Motion page: 5 selected works + 1 yellow playlist card
+- Video page: 5 selected works + 1 yellow playlist card
+- Graphic page: 5 placeholders + 1 playlist/more works card
+- Mobile homepage: shows only 1 work per category to reduce page length
+- Desktop homepage: keeps 3 works per category
+- Play button changed to circle with gold outline
+- Added scroll reveal animation
+- Added desktop scroll highlight: active work turns from black-and-white to color
+- Added small yellow mouse follower only on project thumbnails
+- Added scroll-to-top button
+- Added project counters: Motion `37 Projects+`, Video `41 Projects+`, Graphic `Selected Works`
 
 ## Contact
 
-Email:
-`khemmawat2539@hotmail.com`
+Email: `khemmawat2539@hotmail.com`
 
-YouTube:
-`https://youtube.com/@taeoodmotion3968?si=3hNbAN0YJ-oHGJOD`
+YouTube: `https://youtube.com/@taeoodmotion3968?si=3hNbAN0YJ-oHGJOD`
 
-## How to change a video card
+## How to update on GitHub
 
-Find a card like this:
+Extract this ZIP, open the `khemmawat-portfolio-v3` folder, and upload the files INSIDE the folder to the repository root. Do not upload the outer folder itself.
 
-```html
-<article class="work-card video-card" data-category="motion" data-title="sMMMart AI" data-youtube="iJ66kA3typ4">
-  <button class="work-media js-open-video" type="button" data-video-id="iJ66kA3typ4" data-video-title="sMMMart AI">
-    <img src="https://img.youtube.com/vi/iJ66kA3typ4/hqdefault.jpg" alt="sMMMart AI thumbnail">
-```
-
-Change the YouTube ID in 3 places:
-
-1. `data-youtube="NEW_VIDEO_ID"`
-2. `data-video-id="NEW_VIDEO_ID"`
-3. `src="https://img.youtube.com/vi/NEW_VIDEO_ID/hqdefault.jpg"`
-
-Change the title in 3 places:
-
-1. `data-title="New Project Title"`
-2. `data-video-title="New Project Title"`
-3. `<span class="work-title">New Project Title</span>`
-
-## How to get a YouTube ID
-
-From:
+Correct structure:
 
 ```txt
-https://youtu.be/TAZ3oMDy5-E
+Portfolio/
+├── index.html
+├── motion.html
+├── video.html
+├── graphic.html
+├── contact.html
+├── css/
+├── js/
+├── assets/
+└── README.md
 ```
 
-The ID is:
+## Motion works
 
-```txt
-TAZ3oMDy5-E
-```
+1. EVA AIR — `a_KyHeLiojU`
+2. FedEx SEA Network — `Vr86U0mpI7o`
+3. Commercial Truck Finance — `ore2z2iCLZc`
+4. EV Fundamentals — `1m629q8ZN9M`
+5. ADAHK Art Festival — `Az2mxDy5S4Y`
 
-From:
+Playlist: `https://youtube.com/playlist?list=PL8qV_1kI5UhFjftLzKUUPj3KzzkrMNKdZ&si=scrPAWngwd_DlmFJ`
 
-```txt
-https://www.youtube.com/watch?v=TAZ3oMDy5-E
-```
+## Video works
 
-The ID is also:
+1. CUURP Course — `EgZWFsqHItI`
+2. CMU 60th Anniversary — `eBrPWIuIsrg`
+3. Creative City — `lsLJQgL7UOE`
+4. Why People Love Heartrocker — `8OQ4P4ka85I`
+5. Gamification 101 — `1v52PtYCjvo`
 
-```txt
-TAZ3oMDy5-E
-```
+Playlist: `https://youtube.com/playlist?list=PL8qV_1kI5UhFSuwuMUmAXmFncJOCbRw4F&si=VzxQ02wS7UaVflQx`
 
-## How to change a graphic placeholder
+## Change a video
 
-Put your image in:
+Search for the project title, then change the YouTube ID in `data-youtube`, `data-video-id`, and the thumbnail URL.
 
-```txt
-assets/thumbnails/
-```
+## Change project counters
 
-Then change this:
-
-```html
-<img src="assets/thumbnails/graphic-placeholder-01.svg" alt="Brand System 01 thumbnail">
-```
-
-To:
-
-```html
-<img src="assets/thumbnails/your-image.jpg" alt="Your Project Title thumbnail">
-```
-
-## How the Contact form works
-
-The Contact page form uses `mailto:`.
-
-Flow:
-
-```txt
-Visitor fills form
-→ clicks Contact Me
-→ browser opens Outlook / Mail app
-→ email draft is prepared
-→ visitor presses Send manually
-```
-
-No backend is required. It works on GitHub Pages, but the visitor must have a mail app configured.
-
-## GitHub Pages setup
-
-1. Create a new GitHub repository.
-2. Upload all files and folders from this package.
-3. Go to `Settings` → `Pages`.
-4. Under `Build and deployment`, choose:
-   - Source: `Deploy from a branch`
-   - Branch: `main`
-   - Folder: `/root`
-5. Open the generated GitHub Pages URL.
-
-## File list
-
-```txt
-index.html
-motion.html
-video.html
-graphic.html
-contact.html
-css/style.css
-js/main.js
-assets/thumbnails/
-README.md
-```
+Search for `37 Projects+`, `41 Projects+`, or `Selected Works` in the HTML files. Also update the `PROJECT_COUNT` object at the top of `js/main.js` for future reference.

@@ -1,63 +1,11 @@
-const menuToggle = document.querySelector('.menu-toggle');
-const siteNav = document.querySelector('.site-nav');
-
-if (menuToggle && siteNav) {
-  menuToggle.addEventListener('click', () => {
-    const isOpen = siteNav.classList.toggle('is-open');
-    menuToggle.setAttribute('aria-expanded', String(isOpen));
-  });
-}
-
-const modal = document.getElementById('videoModal');
-const modalVideo = document.getElementById('modalVideo');
-const modalTitle = document.getElementById('modalTitle');
-
-document.querySelectorAll('.js-open-video').forEach((button) => {
-  button.addEventListener('click', () => {
-    const videoId = button.dataset.videoId;
-    const videoTitle = button.dataset.videoTitle || 'Project Video';
-    modalTitle.textContent = videoTitle;
-    modalVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-    modal.classList.add('is-open');
-    modal.setAttribute('aria-hidden', 'false');
-  });
-});
-
-function closeVideoModal() {
-  if (!modal) return;
-  modal.classList.remove('is-open');
-  modal.setAttribute('aria-hidden', 'true');
-  modalVideo.src = '';
-}
-
-document.querySelectorAll('.js-close-video').forEach((button) => {
-  button.addEventListener('click', closeVideoModal);
-});
-
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') closeVideoModal();
-});
-
-const contactForm = document.getElementById('contactForm');
-
-if (contactForm) {
-  contactForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    const name = document.getElementById('contactName').value.trim();
-    const email = document.getElementById('contactEmail').value.trim();
-    const message = document.getElementById('contactMessage').value.trim();
-
-    const subject = `Portfolio Inquiry from ${name || 'Website Visitor'}`;
-    const body = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      '',
-      'Project Message:',
-      message
-    ].join('\n');
-
-    const mailto = `mailto:khemmawat2539@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
-  });
-}
+const PROJECT_COUNT = { motion: "37 Projects+", video: "41 Projects+", graphic: "Selected Works" };
+const menuToggle=document.querySelector('.menu-toggle');const siteNav=document.querySelector('.site-nav');if(menuToggle&&siteNav){menuToggle.addEventListener('click',()=>{const isOpen=siteNav.classList.toggle('is-open');menuToggle.setAttribute('aria-expanded',String(isOpen));})}
+const modal=document.getElementById('videoModal');const modalVideo=document.getElementById('modalVideo');const modalTitle=document.getElementById('modalTitle');const watchYouTube=document.getElementById('watchYouTube');
+document.querySelectorAll('.js-open-video').forEach((button)=>{button.addEventListener('click',()=>{const videoId=button.dataset.videoId;const videoTitle=button.dataset.videoTitle||'Project Video';modalTitle.textContent=videoTitle;modalVideo.src=`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&playsinline=1`;watchYouTube.href=`https://www.youtube.com/watch?v=${videoId}`;modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');})});
+function closeVideoModal(){if(!modal)return;modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');modalVideo.src='';}
+document.querySelectorAll('.js-close-video').forEach((button)=>{button.addEventListener('click',closeVideoModal);});document.addEventListener('keydown',(event)=>{if(event.key==='Escape')closeVideoModal();});
+const contactForm=document.getElementById('contactForm');if(contactForm){contactForm.addEventListener('submit',(event)=>{event.preventDefault();const name=document.getElementById('contactName').value.trim();const email=document.getElementById('contactEmail').value.trim();const message=document.getElementById('contactMessage').value.trim();const subject=`Portfolio Inquiry from ${name||'Website Visitor'}`;const body=[`Name: ${name}`,`Email: ${email}`,'','Project Message:',message].join('
+');window.location.href=`mailto:khemmawat2539@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;})}
+const revealObserver=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(entry.isIntersecting)entry.target.classList.add('is-revealed');});},{threshold:.16});document.querySelectorAll('.reveal-card').forEach((card)=>revealObserver.observe(card));
+const isDesktop=window.matchMedia('(min-width: 901px)').matches;if(isDesktop){const highlightObserver=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{entry.target.classList.toggle('is-active',entry.isIntersecting);});},{rootMargin:'-35% 0px -35% 0px',threshold:0});document.querySelectorAll('.work-card').forEach((card)=>highlightObserver.observe(card));const mouseDot=document.getElementById('mouseDot');const cursorZones=document.querySelectorAll('.js-cursor-zone');window.addEventListener('mousemove',(event)=>{if(!mouseDot)return;mouseDot.style.left=`${event.clientX}px`;mouseDot.style.top=`${event.clientY}px`;});cursorZones.forEach((zone)=>{zone.addEventListener('mouseenter',()=>mouseDot?.classList.add('is-visible'));zone.addEventListener('mouseleave',()=>mouseDot?.classList.remove('is-visible'));});}
+const toTop=document.getElementById('toTop');window.addEventListener('scroll',()=>{if(!toTop)return;toTop.classList.toggle('is-visible',window.scrollY>500);});if(toTop){toTop.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});})}
