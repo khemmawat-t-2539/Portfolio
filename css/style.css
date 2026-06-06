@@ -405,3 +405,33 @@ button { font-family: inherit; }
   .play-button { width: 54px; height: 54px; }
   .play-button::before { left: 22px; top: 17px; }
 }
+
+
+/* V3.1 Play Button Refresh */
+.play-button{
+background:#FFD700 !important;
+border:none !important;
+border-radius:50% !important;
+width:72px !important;
+height:72px !important;
+display:flex !important;
+align-items:center !important;
+justify-content:center !important;
+box-shadow:0 4px 12px rgba(0,0,0,.18);
+}
+.play-button::before{
+content:'' !important;
+width:0 !important;
+height:0 !important;
+border-top:10px solid transparent !important;
+border-bottom:10px solid transparent !important;
+border-left:16px solid #fff !important;
+margin-left:4px !important;
+position:static !important;
+transform:none !important;
+}
+.work-card:hover .play-button,
+.work-media:hover .play-button{
+transform:scale(1.08);
+transition:.25s ease;
+}
