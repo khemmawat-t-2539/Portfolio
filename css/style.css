@@ -195,7 +195,7 @@ button { font-family: inherit; }
   left: 52%;
   top: 50%;
   transform: translate(-50%, -50%);
-  border-left: 18px solid var(--canvas);
+  border-left: 18px solid var(--deep-carbon);
   border-top: 12px solid transparent;
   border-bottom: 12px solid transparent;
 }
