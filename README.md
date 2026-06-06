@@ -90,3 +90,9 @@ Change all three when replacing a video.
 - Mobile/tablet: scroll reveal animation only.
   - Cards fade in and slide up once when entering viewport.
 - Fail-safe rule: if JavaScript fails, all content remains visible.
+
+
+## V4.3 changes
+
+- Increased top navigation hitbox for easier clicking.
+- Changed Contact form submit button text from `Contact Me` to `Send Email`.
