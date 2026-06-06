@@ -64,32 +64,28 @@ if (contactForm) {
   });
 }
 
+
 if ('IntersectionObserver' in window) {
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-revealed');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
+  const isMobileOrTablet = window.matchMedia('(max-width: 900px)').matches;
 
-  document.querySelectorAll('.js-reveal').forEach((el) => revealObserver.observe(el));
-
-  const desktopMedia = window.matchMedia('(min-width: 901px)');
-
-  if (desktopMedia.matches) {
-    const highlightObserver = new IntersectionObserver((entries) => {
+  if (isMobileOrTablet) {
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        entry.target.classList.toggle('is-active', entry.isIntersecting);
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          revealObserver.unobserve(entry.target);
+        }
       });
-    }, { rootMargin: '-35% 0px -35% 0px', threshold: 0 });
+    }, { threshold: 0.12 });
 
-    document.querySelectorAll('.work-card').forEach((card) => highlightObserver.observe(card));
+    document.querySelectorAll('.js-reveal').forEach((el) => revealObserver.observe(el));
+  } else {
+    document.querySelectorAll('.js-reveal').forEach((el) => el.classList.add('is-revealed'));
   }
 } else {
   document.querySelectorAll('.js-reveal').forEach((el) => el.classList.add('is-revealed'));
 }
+
 
 const mouseDot = document.getElementById('mouseDot');
 const isDesktop = window.matchMedia('(min-width: 901px)').matches;

@@ -78,3 +78,15 @@ data-video-title="PROJECT TITLE"
 ```
 
 Change all three when replacing a video.
+
+
+## V4 animation behavior
+
+- Desktop: animations happen only on hover.
+  - Thumbnail zooms.
+  - Thumbnail changes from black-and-white to color.
+  - Title turns yellow.
+  - Play button scales slightly.
+- Mobile/tablet: scroll reveal animation only.
+  - Cards fade in and slide up once when entering viewport.
+- Fail-safe rule: if JavaScript fails, all content remains visible.
