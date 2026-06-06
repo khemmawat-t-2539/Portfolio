@@ -1,32 +1,12 @@
-# Khemmawat Tantragool Portfolio Website — V3
+# Khemmawat Tantragool Portfolio Website — V3.1
 
-Static responsive portfolio website for GitHub Pages.
+Built fresh from scratch.
 
-## V3 changes
+## Important upload rule
 
-- Motion page: 5 selected works + 1 yellow playlist card
-- Video page: 5 selected works + 1 yellow playlist card
-- Graphic page: 5 placeholders + 1 playlist/more works card
-- Mobile homepage: shows only 1 work per category to reduce page length
-- Desktop homepage: keeps 3 works per category
-- Play button changed to circle with gold outline
-- Added scroll reveal animation
-- Added desktop scroll highlight: active work turns from black-and-white to color
-- Added small yellow mouse follower only on project thumbnails
-- Added scroll-to-top button
-- Added project counters: Motion `37 Projects+`, Video `41 Projects+`, Graphic `Selected Works`
+Upload the files **inside** `khemmawat-portfolio-v3-1` to the root of the GitHub repository.
 
-## Contact
-
-Email: `khemmawat2539@hotmail.com`
-
-YouTube: `https://youtube.com/@taeoodmotion3968?si=3hNbAN0YJ-oHGJOD`
-
-## How to update on GitHub
-
-Extract this ZIP, open the `khemmawat-portfolio-v3` folder, and upload the files INSIDE the folder to the repository root. Do not upload the outer folder itself.
-
-Correct structure:
+Correct:
 
 ```txt
 Portfolio/
@@ -41,30 +21,60 @@ Portfolio/
 └── README.md
 ```
 
-## Motion works
+Wrong:
 
-1. EVA AIR — `a_KyHeLiojU`
-2. FedEx SEA Network — `Vr86U0mpI7o`
-3. Commercial Truck Finance — `ore2z2iCLZc`
-4. EV Fundamentals — `1m629q8ZN9M`
-5. ADAHK Art Festival — `Az2mxDy5S4Y`
+```txt
+Portfolio/
+└── khemmawat-portfolio-v3-1/
+    ├── index.html
+```
 
-Playlist: `https://youtube.com/playlist?list=PL8qV_1kI5UhFjftLzKUUPj3KzzkrMNKdZ&si=scrPAWngwd_DlmFJ`
+## V3.1 fixes
 
-## Video works
+- Fresh rebuild from scratch.
+- Scroll reveal is fail-safe: if JavaScript fails, cards remain visible.
+- Motion page: 5 selected works + 1 yellow playlist card.
+- Video page: 5 selected works + 1 yellow playlist card.
+- Graphic page: 5 placeholders + 1 channel card.
+- Play button: circular, gold outline, white icon.
+- Mouse follower: small yellow dot only on thumbnails/cards.
+- Scroll-to-top button included.
+- Contact form opens an email draft via `mailto:`.
 
-1. CUURP Course — `EgZWFsqHItI`
-2. CMU 60th Anniversary — `eBrPWIuIsrg`
-3. Creative City — `lsLJQgL7UOE`
-4. Why People Love Heartrocker — `8OQ4P4ka85I`
-5. Gamification 101 — `1v52PtYCjvo`
+## Work titles
 
-Playlist: `https://youtube.com/playlist?list=PL8qV_1kI5UhFSuwuMUmAXmFncJOCbRw4F&si=VzxQ02wS7UaVflQx`
+Motion:
+1. EVA AIR
+2. FedEx SEA Network
+3. Commercial Truck Finance
+4. EV Fundamentals
+5. ADAHK Art Festival
 
-## Change a video
+Video:
+1. CUURP Course
+2. CMU 60th Anniversary
+3. Creative City
+4. Why People Love Heartrocker
+5. Gamification 101
 
-Search for the project title, then change the YouTube ID in `data-youtube`, `data-video-id`, and the thumbnail URL.
+## Edit counters
 
-## Change project counters
+Search these in HTML:
 
-Search for `37 Projects+`, `41 Projects+`, or `Selected Works` in the HTML files. Also update the `PROJECT_COUNT` object at the top of `js/main.js` for future reference.
+```txt
+37 Projects+
+41 Projects+
+Selected Works
+```
+
+## Edit YouTube videos
+
+Each video card has:
+
+```html
+data-video-id="VIDEO_ID"
+data-video-title="PROJECT TITLE"
+<img src="https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg">
+```
+
+Change all three when replacing a video.
